@@ -1,0 +1,37 @@
+﻿@page
+@model NotesWebApp.Pages.Notes.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Note</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+           <label @Html.DisplayNameFor(model => model.Note.ShortDescription)>Note summary</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Note.ShortDescription)
+        </dd>
+        <dt class="col-sm-2">
+            <label @Html.DisplayNameFor(model => model.Note.FullDescription)>Note description</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Note.FullDescription)
+        </dd>
+        <dt class="col-sm-2">
+            <label @Html.DisplayNameFor(model => model.Note.Date)>Created on</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Note.Date)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Note.ID">Edit</a> |
+    <a asp-page="./Index">Back to My Notes</a>
+</div>
